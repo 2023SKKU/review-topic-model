@@ -46,7 +46,7 @@ class TextPreprocessing:
 
         df = df['product_category'] == product_name
         if star_rating_range is not None:
-            df = df[(df['star_rating'] >= star_rating_range[0]) & (df['star_rating'] <= star_rating_range[0])]
+            df = df[(df['star_rating'] >= star_rating_range[0]) & (df['star_rating'] <= star_rating_range[1])]
         df.apply(_get_content, axis=1)
 
         pp_timestamps = []
