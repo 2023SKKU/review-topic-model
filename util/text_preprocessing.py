@@ -44,7 +44,6 @@ class TextPreprocessing:
                     self.timestamps.append(datetime.strptime(row['time'], '%Y-%m-%dT%H:%M:%S.%f%z'))
                     self.original_doc.append(s[0])
 
-        df = df['product_category'] == product_name
         if star_rating_range is not None:
             df = df[(df['star_rating'] >= star_rating_range[0]) & (df['star_rating'] <= star_rating_range[1])]
         df.apply(_get_content, axis=1)
